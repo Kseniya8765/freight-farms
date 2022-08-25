@@ -1,0 +1,63 @@
+@mixin icon-props($image-url, $width, $height) {
+  display: inline-block;
+  width: #{$width}px;
+  height: #{$height}px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url($image-url);
+}
+
+@mixin icon($name, $image-url, $width, $height, $pseudo: false) {
+  @if $pseudo {
+    content: "";
+    @include icon-props($image-url, $width, $height);
+  } @else {
+    .icon-#{$name} {
+      @include icon-props($image-url, $width, $height);
+    }
+  }
+}
+
+@include icon("logo", $icons + "/logo.svg", 267, 25);
+@include icon("ellipse", $icons + "/ellipse.svg", 10, 10);
+@include icon("logo-footer", $icons + "/logo.svg", 267, 25);
+@include icon("logo-product", $icons + "/logo-product.svg", 267, 25);
+@include icon("logo-reserve", $icons + "/freight-farms.svg", 157, 45);
+@include icon("logo-big", $icons + "/logo.svg", 829, 78);
+@include icon("drop", $icons + "/drop.svg", 45, 45);
+@include icon("time", $icons + "/time.svg", 45, 45);
+@include icon("scales", $icons + "/scales.svg", 45, 45);
+@include icon("facebook", $icons + "/facebook.svg", 27, 27);
+@include icon("twitter", $icons + "/twitterr.svg", 27, 27);
+@include icon("instagram", $icons + "/instagram.svg", 27, 27);
+@include icon("youtube", $icons + "/youtube.svg", 27, 27);
+@include icon("linkedin", $icons + "/linkedin.svg", 27, 27);
+@include icon("ester", $icons + "/ester.svg", 36, 36);
+@include icon("home", $icons + "/home.svg", 45, 45);
+@include icon("community", $icons + "/community.svg", 45, 45);
+@include icon("government", $icons + "/government.svg", 45, 45);
+@include icon("restaurant", $icons + "/restaurant.svg", 45, 45);
+@include icon("arrow-down", $icons + "/arrow-down.svg", 21, 34);
+@include icon("arrow-right", $icons + "/arrow-right.svg", 42, 26);
+@include icon("load", $icons + "/load.svg", 32, 38);
+@include icon("letter", $icons + "/m.svg", 55, 49);
+
+@include media-breakpoint-down(xl) {
+  @include icon("logo-big", $icons + "/logo.svg", 335, 32);
+  @include icon("arrow-right", $icons + "/arrow-right.svg", 26, 16);
+  @include icon("load", $icons + "/load.svg", 17, 26);
+}
+
+@include media-breakpoint-down(lg) {
+  @include icon("logo", $icons + "/logo.svg", 160, 15);
+  @include icon("logo-footer", $icons + "/logo.svg", 187, 22);
+  @include icon("logo-product", $icons + "/logo-product.svg", 160, 15);
+  @include icon("logo-reserve", $icons + "/freight-farms.svg", 112, 32);
+  @include icon("drop", $icons + "/drop.svg", 24, 24);
+  @include icon("time", $icons + "/time.svg", 24, 24);
+  @include icon("scales", $icons + "/scales.svg", 24, 24);
+  @include icon("ester", $icons + "/ester.svg", 24, 24);
+  @include icon("letter", $icons + "/m.svg", 32, 28);
+  @include icon("arrow-down", $icons + "/arrow-down.svg", 16, 26);
+}

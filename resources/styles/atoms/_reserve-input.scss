@@ -1,0 +1,37 @@
+.reserve-input {
+  @include body;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid $dusty;
+  padding-bottom: 24px;
+  width: 100%;
+
+  &__label {
+    @include body;
+    position: absolute;
+    top: 0;
+    color: $dusty;
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    height: 35px;
+    z-index: -1;
+
+    span {
+      color: $orange;
+    }
+  }
+
+  &:valid + &__label {
+    display: none;
+  }
+  &:focus + &__label {
+    display: none;
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 20px;
+  }
+}

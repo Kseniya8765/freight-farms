@@ -1,0 +1,17 @@
+.links {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+
+  li {
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin-right: 31px;
+    }
+  }
+}

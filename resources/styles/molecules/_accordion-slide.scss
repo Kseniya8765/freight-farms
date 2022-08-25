@@ -1,0 +1,4 @@
+.accordion-slide__image {
+  @include aspect-ratio-pseudo(532, 780);
+  max-width: 532px;
+}

@@ -1,0 +1,33 @@
+.services-card {
+  max-width: 428px;
+
+  &__img {
+    @include aspect-ratio-pseudo(428, 628);
+
+    img {
+      border-radius: 214px;
+
+      @include media-breakpoint-down(lg) {
+        border-radius: 1000px;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      @include aspect-ratio-pseudo(334, 214);
+    }
+  }
+
+  &__text {
+    margin-top: 42px;
+    text-align: center;
+
+    @include media-breakpoint-down(lg) {
+      margin-top: 20px;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    width: 100%;
+    margin: 0 auto;
+  }
+}

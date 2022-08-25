@@ -1,0 +1,44 @@
+.panel {
+  transition: opacity 1s ease-out;
+
+  &__container {
+    @include media-breakpoint-down(lg) {
+      padding: 30px 20px 32px 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    color: $sea;
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 50px;
+    color: $dark;
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    border: 1px solid $dusty;
+    padding: 27px 69px;
+    border-radius: 45px;
+    white-space: nowrap;
+
+    @include media-breakpoint-down(lg) {
+      padding: 18px 67px;
+    }
+  }
+
+  &__image {
+    @include aspect-ratio-pseudo(335, 214);
+    max-width: 335px;
+    margin: 0 auto;
+  }
+}

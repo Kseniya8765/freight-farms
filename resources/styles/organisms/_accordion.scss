@@ -1,0 +1,220 @@
+.accordion {
+  $self: &;
+
+  &__wrapper {
+    align-items: center;
+  }
+
+  &__tab {
+    position: relative;
+    cursor: pointer;
+    padding: 62px 18px 80px;
+    width: 106px;
+    height: 100%;
+    transition: 0.4s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &:after {
+      content: '';
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      background-color: rgba(159, 165, 151, 0.3);
+    }
+
+    &-icon {
+      opacity: 0.5;
+      transition: opacity 0.3 ease;
+      will-change: opacity;
+
+      @include media-breakpoint-down(lg) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 100%;
+      height: unset;
+      flex-direction: row;
+      padding: 12px 20px;
+
+      &::after {
+        width: 100%;
+        height: 1px;
+      }
+    }
+
+    &-text {
+      color: $black;
+      border: 1px solid $dusty;
+      box-sizing: border-box;
+      border-radius: 146px;
+      padding: 21px 25px;
+      position: relative;
+      transition: all 0.3s;
+      min-width: 70px;
+
+      @include media-breakpoint-down(lg) {
+        min-width: 47px;
+        padding: 18px 19px;
+      }
+    }
+  }
+
+  &-section {
+    background-color: $white;
+  }
+
+  &__title {
+    letter-spacing: -0.05em;
+    color: $sea;
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: unset;
+      letter-spacing: -0.02em;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    margin: 40px 0 50px;
+
+    @include media-breakpoint-down(lg) {
+      margin: 20px 0;
+    }
+  }
+
+  &__slider {
+    width: calc(100% - 40vw + 106px * 3);
+    position: relative;
+
+    & > .swiper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0 15%;
+
+      @include media-breakpoint-down(xxl) {
+        padding: 0 3%;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__panel {
+    &.panel {
+      overflow: hidden;
+      height: 0;
+      width: 0;
+      opacity: 0;
+    }
+
+    .panel__image {
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    min-height: 960px;
+
+    @include media-breakpoint-down(xl) {
+      min-height: 660px;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      width: unset;
+
+      @include media-breakpoint-up(lg) {
+        align-items: flex-end;
+      }
+
+      @include media-breakpoint-down(lg) {
+        flex-direction: column;
+      }
+
+      &:not(&_active) {
+        @include media-breakpoint-down(up) {
+          @media (any-hover: hover) {
+            &:hover {
+              #{$self}__tab-text {
+                color: $orange;
+                border-color: $orange;
+
+                &::after {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &_active {
+        &:first-child {
+          #{$self}__panel {
+            padding-left: 0;
+          }
+        }
+        @include media-breakpoint-up(lg) {
+          width: 41vw;
+        }
+
+        #{$self}__tab {
+          &-icon {
+            opacity: 1;
+          }
+        }
+
+        #{$self}__panel {
+          opacity: 1;
+          height: auto;
+          width: auto;
+
+          @include media-breakpoint-up(lg) {
+            padding: 0 5px 80px 10px;
+          }
+
+          @include media-breakpoint-down(lg) {
+            margin-bottom: 35px;
+          }
+
+          @include media-breakpoint-up(xxl) {
+            padding: 0 18px 80px 60px;
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 100%;
+      min-height: unset;
+      flex-direction: column;
+    }
+  }
+
+  .swiper-slide-active {
+    opacity: 1 !important;
+  }
+}

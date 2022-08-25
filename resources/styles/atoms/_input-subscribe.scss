@@ -1,0 +1,18 @@
+.input-subscribe {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  max-width: 885px;
+  width: 100%;
+  border-bottom: 1px solid $dark;
+  padding-bottom: 24px;
+  color: $dark;
+
+  &::placeholder {
+    color: $dark;
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 20px;
+  }
+}

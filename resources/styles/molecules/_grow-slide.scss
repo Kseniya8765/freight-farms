@@ -1,0 +1,31 @@
+.grow-slide {
+  display: flex;
+
+  i {
+    position: absolute;
+    top: 10px;
+    left: -80px;
+
+    @include media-breakpoint-down(lg) {
+      position: static;
+      margin-right: 12px;
+      margin-top: 10px;
+    }
+  }
+  &__title {
+    text-align: left;
+    margin-bottom: 40px;
+    white-space: nowrap;
+    position: relative;
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    color: $dusty;
+    max-width: 427px;
+    text-align: left;
+  }
+}

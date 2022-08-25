@@ -1,0 +1,39 @@
+.reserve-form {
+  flex-direction: column;
+  //padding-top: 96px;
+  //padding-bottom: 30px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+
+  &_active {
+    max-height: 1000px;
+    opacity: 1;
+    padding-top: 96px;
+    padding-bottom: 30px;
+  }
+
+  &__title {
+    color: $white;
+    margin-bottom: 33px;
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__container {
+    position: relative;
+    margin-bottom: 40px;
+    z-index: 2;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    margin-top: 60px;
+  }
+}

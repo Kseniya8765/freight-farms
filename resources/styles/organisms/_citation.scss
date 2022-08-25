@@ -1,0 +1,35 @@
+.citation {
+  background: $dark;
+
+  &__container {
+    padding: 160px 0 157px 0;
+
+    @include media-breakpoint-down(lg) {
+      padding: 80px 0 83px 0;
+    }
+  }
+
+  &__wrapper {
+    justify-content: center;
+
+    @include media-breakpoint-down(lg) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 88px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media-breakpoint-down(lg) {
+      text-align: left;
+      margin-bottom: 40px;
+      padding: 0;
+    }
+  }
+}

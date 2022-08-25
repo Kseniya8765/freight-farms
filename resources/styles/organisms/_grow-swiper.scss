@@ -1,0 +1,34 @@
+.grow__swiper {
+  overflow: initial;
+  z-index: 2;
+
+  &-wrapper {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .swiper-pagination-progressbar {
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: 0;
+    margin-top: 94px;
+    border-radius: 4px;
+    background-color: $sea;
+
+    @include media-breakpoint-down(lg) {
+      margin-top: 98px;
+    }
+  }
+
+  .swiper-pagination-progressbar-fill {
+    background-color: $orange !important;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    transform: scale(0);
+    transform-origin: left top;
+  }
+}

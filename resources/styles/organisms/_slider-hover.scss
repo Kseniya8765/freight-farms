@@ -1,0 +1,64 @@
+.slider-hover {
+  background: $dusty;
+  padding: 160px 0;
+
+  &__slide {
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    @include media-breakpoint-down(lg) {
+      justify-content: center;
+    }
+  }
+
+  .pagination-hover {
+    &__content {
+      margin-bottom: 60px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 40px;
+      }
+    }
+
+    &__title,
+    &__text {
+      @include headline-3;
+      color: $dark;
+    }
+
+    &__text {
+      color: $white;
+      max-width: 733px;
+
+      @include media-breakpoint-down(lg) {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__img {
+    @include aspect-ratio-pseudo(532, 780);
+    max-width: 532px;
+
+    @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 40px;
+      }
+
+      img {
+        border-radius: 1000px;
+      }
+      &::after {
+        @include aspect-ratio-dimensions(335, 214);
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding: 80px 0;
+  }
+}

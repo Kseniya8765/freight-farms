@@ -1,0 +1,119 @@
+.overview {
+  background-color: $dusty;
+  padding: 161px 0 164px 0;
+
+  &__title {
+    margin-bottom: 80px;
+
+    span {
+      position: relative;
+      display: inline-block;
+      margin-left: 29px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 1px solid $orange;
+        height: 100%;
+        width: calc(100% + 44px);
+        border-radius: 146px;
+
+        @include media-breakpoint-down(lg) {
+          width: calc(100% + 20px);
+        }
+      }
+
+      @include media-breakpoint-down(lg) {
+        margin-left: 56px;
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      margin-bottom: 29px;
+    }
+  }
+
+  &__btn {
+    padding: 26px 70px;
+    margin-top: 70px;
+
+    i {
+      position: relative;
+      top: 5px;
+      left: 10px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      padding: 18px 32px;
+      margin-top: 60px;
+      margin-bottom: 93px;
+    }
+  }
+
+  &__show {
+    color: $dark;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 30px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url($images + '/icons/show.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 23px;
+      height: 13px;
+      bottom: 12px;
+      right: -34px;
+
+      @include media-breakpoint-down(xl) {
+        width: 12px;
+        height: 7px;
+        bottom: 9px;
+        right: -17px;
+      }
+    }
+
+    &_active {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin-top: 0;
+    }
+  }
+
+  &__img {
+    @include aspect-ratio-pseudo(615, 501);
+    max-width: 615px;
+    bottom: 69px;
+
+    @include media-breakpoint-down(lg) {
+      bottom: 0;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding: 140px 0 80px 0;
+  }
+
+  &__show-wrapper {
+    @include media-breakpoint-down(lg) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  }
+}

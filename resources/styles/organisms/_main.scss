@@ -1,0 +1,50 @@
+.input-btn {
+  margin-left: 70px;
+  padding: 28px 70px;
+  border-radius: 45px;
+  border: none;
+  outline: none;
+  white-space: nowrap;
+
+  i {
+    margin-left: 16px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 30px;
+    padding: 18px 35px 20px 40px;
+    border-radius: 33px;
+  }
+}
+
+/////////////slider////////////
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+  width: unset;
+  height: unset;
+  display: block;
+  border-radius: unset;
+  background: unset;
+  opacity: unset;
+}
